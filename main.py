@@ -14,8 +14,8 @@ if __name__ == "__main__":
     status = False
     while True:
         try:
-            # user_input = listen_speech()
-            user_input = input("input:\n")
+            user_input = listen_speech()
+            # user_input = input("input:\n")
             if user_input is None:
                 print("Hah ngomong apa? coba ulangin..")
                 continue
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
             elif "tidur sana" in user_input:
                 status = False
-                say("Yaudah atuu, Sampai nanti Faiz!")
+                say("Yaudah atuu, Sampai nanti iz!")
                 continue
 
             elif status:
