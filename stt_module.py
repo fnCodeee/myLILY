@@ -4,7 +4,7 @@ def listen_speech():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Kalibrasi noice...")
-        r.adjust_for_ambient_noise(source, duration=0.75)
+        r.adjust_for_ambient_noise(source, duration=1.2)
 
         print("Say anything...")
         audio = r.listen(source)

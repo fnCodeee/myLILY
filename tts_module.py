@@ -1,13 +1,23 @@
 from gtts import gTTS
+from pydub import AudioSegment
 import os
 
-# Test ganti ke suara
-# text = "Hallo Faiz, Gimana kabarmu"
-# tts = gTTS(text=text, lang='id')
-# tts.save("output/suara.mp3")
-# os.system("mpg123 output/suara.mp3")
+def say(text, lang='id', filename='output/suara.mp3', speed=1.0):
+    os.makedirs('output', exist_ok=True)
+    temp_file = 'output/temp.mp3'
 
-def say(text, lang='id', filename='output/suara.mp3'):
-    tts = gTTS(text=text, lang=lang)
-    tts.save(filename)
-    os.system(f"mpg123 {filename}")
+    try:
+        # Buat suara
+        tts = gTTS(text=text, lang=lang)
+        tts.save(temp_file)
+
+        # Ubah kecepatan
+        sound = AudioSegment.from_file(temp_file)
+        sound = sound.speedup(playback_speed=speed)
+        sound.export(filename, format='mp3')
+
+        # Mainkan
+        os.system(f"mpg123 {filename}")
+
+    except Exception as e:
+        print("❌ Gagal menjalankan say():", e)
