@@ -45,3 +45,63 @@ pip install -r requirements.txt
 
 # Jalankan Ollama dan model (pastikan Ollama sudah terinstall)
 ollama run llama3
+```
+
+
+##
+🪟 Windows (CMD / PowerShell)
+
+```bash
+# Clone repositori
+git clone https://github.com/username/lily-ai.git
+cd lily-ai
+
+# Buat virtual environment
+python -m venv venv
+
+# Aktifkan virtual environment (pilih salah satu tergantung terminal)
+venv\Scripts\activate.bat      # Jika pakai CMD
+venv\Scripts\Activate.ps1      # Jika pakai PowerShell
+
+# Install pipwin dan PyAudio (solusi untuk error pyaudio)
+pip install pipwin
+pipwin install pyaudio
+
+# Install semua dependensi Python
+pip install -r requirements.txt
+
+# Jalankan model AI lokal
+ollama run llama3
+```
+
+
+📌 Jika Activate.ps1 diblokir oleh PowerShell, jalankan perintah ini terlebih dahulu:
+
+```bash
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+##
+🍎 macOS
+
+```bash
+# Install Homebrew jika belum (untuk ffmpeg & portaudio)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install dependency sistem
+brew install ffmpeg portaudio
+
+# Clone repositori
+git clone https://github.com/username/lily-ai.git
+cd lily-ai
+
+# Buat dan aktifkan virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependensi Python
+pip install -r requirements.txt
+
+# Jalankan model AI lokal
+ollama run llama3
+```
