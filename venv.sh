@@ -1,4 +1,4 @@
 #!/bin/bash
-cd ../.. 
+cd ../../.. 
 source venv/bin/activate
-cd Project/LILY
+cd Project/LILY_ASSISTENT/LILY
