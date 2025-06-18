@@ -1,38 +1,47 @@
+# 🤖 LILY - AI Assistant with Local Ollama Model
+
+LILY adalah asisten AI berbasis suara yang berjalan **sepenuhnya lokal** menggunakan [Ollama](https://ollama.com). Dibekali dengan Google Text-to-Speech dan SpeechRecognition, LILY dapat mendengarkan suara pengguna, merespon dengan AI lokal (seperti LLaMA3), dan membalas dalam bentuk suara.
 
 ---
 
-## 🚀 Bonus: Template Ringkas README Awal (Kamu Bisa Copas!)
-
-```md
-# 🧠 AI Assistant with Local Ollama Model
-
-Proyek ini adalah asisten AI lokal berbasis suara yang menggunakan model AI dari [Ollama](https://ollama.com), serta Google TTS dan SpeechRecognition untuk komunikasi dua arah.
-
 ## ✨ Fitur
 
-- Jalankan model AI lokal (llama3) tanpa internet
-- Terima input suara dari user
-- Konversi jawaban AI menjadi suara
+- 🎤 Input suara menggunakan microphone
+- 🧠 Pemrosesan prompt oleh AI lokal (Ollama)
+- 🔊 Output suara via Google TTS
+- 🖥️ Support untuk **Linux**, **Windows**, dan **macOS**
+
+---
 
 ## 🛠️ Teknologi
 
-- Python 3
-- gTTS, PyDub, SpeechRecognition
-- Ollama (Llama3 model)
-- pyaudio (untuk mic)
-- Platform: Linux, Windows, macOS
+- **Bahasa:** Python 3
+- **Speech-to-Text:** `SpeechRecognition`, `PyAudio`
+- **Text-to-Speech:** `gTTS`, `pydub`
+- **Model AI:** `Ollama` (LLaMA3 atau model lainnya)
+- **Platform Support:** ✅ Windows / ✅ macOS / ✅ Linux
+
+---
 
 ## 📥 Instalasi
 
-> Klik untuk melihat instruksi per OS
-
-- [Linux](#-linux-debianubuntu)
-- [Windows](#-windows)
-- [macOS](#-macos)
-
-...
-
-## 🎙 Cara Menggunakan
+### 🐧 Linux (Debian/Ubuntu)
 
 ```bash
-python main.py
+# Install dependency sistem
+sudo apt update
+sudo apt install python3 python3-pip portaudio19-dev ffmpeg -y
+
+# Clone repositori
+git clone https://github.com/username/lily-ai.git
+cd lily-ai
+
+# Buat dan aktifkan virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependency Python
+pip install -r requirements.txt
+
+# Jalankan Ollama dan model (pastikan Ollama sudah terinstall)
+ollama run llama3
