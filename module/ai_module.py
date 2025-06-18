@@ -1,11 +1,11 @@
 import requests
 
 def get_ollama_chat_completion(message_from_user: str) -> str:
-    url = "http://localhost:11434/api/chat"
+    url = "http://localhost:11434/api/chat" # url local ollama
     headers = {"Content-Type": "application/json"}
     
     payload = {
-        "model": "lilyV2-gm1b",
+        "model": "lilyV2-gm1b", #gunakan model yang sudah di pull ke local ollama
         "messages": [
             {
                 "role": "user",

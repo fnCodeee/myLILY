@@ -19,8 +19,8 @@ if __name__ == "__main__":
     status = False
     while True:
         try:
-            # user_input = listen_speech()
-            user_input = input("input:\n")
+            user_input = listen_speech()
+            # user_input = input("input:\n")
             if user_input is None:
                 print("Hah ngomong apa? coba ulangin..")
                 continue
@@ -30,10 +30,10 @@ if __name__ == "__main__":
             trigger_keywords = ['Lily', 'lita', 'lili']
             if any(keyword in user_input.lower() for keyword in trigger_keywords):
                 status = True
-                say("Iya sayanghh, ada yang bisa aku bantu?", speed=1.2)
+                say("Iya iz, ada yang bisa aku bantu?", speed=1.2)
                 continue
 
-            elif "aku pergi dulu" in user_input:
+            elif "aku pergi dulu" in user_input or "tidur" in user_input:
                 status = False
                 say("Yaudah atuu, Sampai nanti!", speed=1.1)
                 continue
@@ -45,9 +45,7 @@ if __name__ == "__main__":
 
             else:
                 print("Model Nonaktif!!")
-                # say("Hahhhhhhhhhh", speed=1.1)
-                # os.system(f"mpg123 output/mas_wamas.mp3")
-
+                
         except:
             print("\nProgam dihentikan.")
             break
